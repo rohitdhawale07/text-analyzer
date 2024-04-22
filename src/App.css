@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main {
+  background-color: #f1f6fd;
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: start;
+  gap: 1rem;
+  padding: 1rem 4rem;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  position: relative;
+  color: #f1f6fd;
+  -webkit-text-stroke: 1px #383d52;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgb(58, 58, 58);
+  -webkit-text-stroke: 0vw #383d52;
+  border-right: 2px solid rgb(54, 54, 54);
+  overflow: hidden;
+  animation: animate 5s linear infinite;
+}
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
   }
-  to {
-    transform: rotate(360deg);
+  70%,
+  90% {
+    width: 100%;
   }
 }
+
+.main .info {
+  font-size: 18px;
+  color: rgb(90, 90, 90);
+  width: 700px;
+  letter-spacing: 0.4px;
+}
+
+button {
+  padding: 10px;
+  width: 300px;
+  background-color: transparent;
+  margin-right: 5px;
+  font-weight: 600;
+  border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  color: rgb(77, 77, 77);
+}
+
+button.active {
+  background-color: white;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 50rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 70%;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: white;
+}
+
+

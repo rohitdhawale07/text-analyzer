@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import ParagraphInputAnalyzer from "./components/ParagraphInputAnalyzer";
+import WordInputAnalyzer from "./components/WordInputAnalyzer";
 
 function App() {
+  const [inputType, setInputType] = useState("word");
+
+  function handleInputTypeChange(type) {
+    setInputType(type);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="main">
+      <h1 data-text="TextAnalyzer">TextAnalyzer</h1>
+      <p className="info">
+        Text Analyzer is a simple free online tool for SEO web content analysis
+        that helps you find most frequent phrases and words, number of
+        characters, words, sentences and paragraphs, and  estimated read nad
+        speak time of your content.
+      </p>
+      <div>
+        <button
+          className={inputType === "word" ? "active" : ""}
+          onClick={() => handleInputTypeChange("word")}
         >
-          Learn React
-        </a>
-      </header>
+          Word Input
+        </button>
+        <button
+          className={inputType === "paragraph" ? "active" : ""}
+          onClick={() => handleInputTypeChange("paragraph")}
+        >
+          Paragraph
+        </button>
+      </div>
+      {inputType === "word" ? (
+        <WordInputAnalyzer />
+      ) : (
+        <ParagraphInputAnalyzer />
+      )}
     </div>
   );
 }
