@@ -1,4 +1,25 @@
-# Getting Started with Create React App
+# Text Analyzer
+## Hosted Link:- https://text-analyzer-azure.vercel.app/
+
+This project is a simple text analyzer web application built with React. 
+It allows users to input text (either single words or paragraphs) and 
+provides real-time analysis of various metrics such as character count, word count, sentence count, paragraph count, spaces count, and punctuation count.
+
+## Features
+
+- Input text using a text area for paragraphs or a text input for single words.
+- Real-time analysis of text metrics including characters, words, sentences, paragraphs, spaces, and punctuations.
+- Data visualization in a tabular format for easy viewing.
+- Smooth transition between tab changing using framer motion.
+
+## Technologies Used
+
+- React.js for building the frontend user interface.
+- JavaScript for implementing text analysis logic.
+- HTML/CSS for styling and structuring the web application.
+- Framer motion for smooth transition.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
